@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ logo }) => {
             className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6"
         >
             <nav className="flex items-center justify-between w-full max-w-5xl bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 shadow-2xl">
-                <a href="/" className="flex items-center gap-3">
+                <a href="#inicio" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-gold/20 flex items-center justify-center bg-black">
                         <img
                             src={logo.src}
