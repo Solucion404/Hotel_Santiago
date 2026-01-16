@@ -50,28 +50,39 @@ export const Contact: React.FC = () => {
                             <span className="text-gold"><MapPin /></span>
                             <div>
                                 <h4 className="font-bold">Dirección</h4>
-                                <p className="text-gray-600">Av. Central Norte #45, Col. Centro, Yajalón, Chiapas.</p>
+                                <p className="text-gray-600">29930, Central Nte., Centro, Yajalón, Chis.</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
                             <Mail className="text-gold" />
                             <div>
                                 <h4 className="font-bold">Correo</h4>
-                                <p className="text-gray-600">contacto@hotelsantiago.mx</p>
+                                <p className="text-gray-600">hotelsantiago53@gmail.com</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
                             <Phone className="text-gold" />
-                            <div>
-                                <h4 className="font-bold">Teléfono / WhatsApp</h4>
-                                <a
-                                    href="https://wa.me/529191478756"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-600 hover:text-gold transition-colors"
-                                >
-                                    +52 (919) 147 8756
-                                </a>
+                            <div className="space-y-3">
+                                <div>
+                                    <h4 className="font-bold">WhatsApp</h4>
+                                    <a
+                                        href="https://wa.me/529191478756?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20una%20reserva%20en%20Hotel%20Santiago."
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-gray-600 hover:text-gold transition-colors"
+                                    >
+                                        +52 (919) 147 8756
+                                    </a>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold">Teléfono Fijo</h4>
+                                    <a
+                                        href="tel:9196740844"
+                                        className="text-gray-600 hover:text-gold transition-colors"
+                                    >
+                                        (919) 67 40844
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
