@@ -1,0 +1,59 @@
+---
+import { Instagram, Facebook } from "lucide-react";
+---
+
+<footer class="bg-wine text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12"
+        >
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-12 h-12 rounded-full overflow-hidden border border-white/10 flex items-center justify-center bg-black"
+                >
+                    <img
+                        src="/images/logo.jpg"
+                        alt="Logo Hotel Santiago"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <h3
+                    class="font-serif text-2xl font-bold tracking-widest uppercase"
+                >
+                    Hotel Santiago
+                </h3>
+            </div>
+            <div class="flex gap-8 text-sm uppercase font-semibold">
+                <a
+                    class="hover:text-gold transition-colors"
+                    href="#habitaciones">Habitaciones</a
+                >
+                <a class="hover:text-gold transition-colors" href="#esencia"
+                    >Esencia</a
+                >
+                <a class="hover:text-gold transition-colors" href="#contacto"
+                    >Contacto</a
+                >
+            </div>
+            <div class="flex gap-4">
+                <a
+                    class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-all"
+                    href="#"
+                >
+                    <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                    class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-all"
+                    href="#"
+                >
+                    <Facebook className="w-5 h-5 fill-current" />
+                </a>
+            </div>
+        </div>
+        <div
+            class="border-t border-white/10 pt-8 text-center text-white/40 text-xs"
+        >
+            © 2024 Hotel Santiago Yajalón. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>

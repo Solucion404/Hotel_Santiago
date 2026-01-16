@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/layout/Header.astro";
+import Hero from "../components/sections/Hero.astro";
+import Philosophy from "../components/sections/Philosophy.astro";
+import Rooms from "../components/sections/Rooms.astro";
+import Gallery from "../components/sections/Gallery.astro";
+import { Contact } from "../components/sections/Contact";
+import Footer from "../components/layout/Footer.astro";
+---
+
+<Layout title="Inicio">
+	<Header />
+	<main>
+		<Hero />
+		<Philosophy />
+		<Rooms />
+		<Gallery />
+		<Contact client:visible />
+	</main>
+	<Footer />
+</Layout>

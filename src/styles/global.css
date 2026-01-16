@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Lora", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-gold: #D98E32;
+  --color-wine: #8C3A3A;
+  --color-bone: #FAF9F6;
+  --color-dark: #171717;
+  --color-neutral-canvas: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-bone text-dark;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}

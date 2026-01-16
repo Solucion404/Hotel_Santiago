@@ -1,0 +1,43 @@
+---
+import { Button } from "../ui/Button";
+import { Reveal } from "../ui/Reveal";
+---
+
+<section
+    class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-neutral-900"
+>
+    <div class="absolute inset-0 z-0">
+        <img
+            src="/images/hero-bg.jpg"
+            alt="Hotel Santiago Hero"
+            class="w-full h-full object-cover opacity-60"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative z-20 text-center px-4">
+        <Reveal delay={0.1}>
+            <h1
+                class="font-serif text-white text-6xl md:text-8xl font-bold mb-4 tracking-tight uppercase"
+            >
+                Hotel Santiago
+            </h1>
+        </Reveal>
+        <Reveal delay={0.3}>
+            <h2
+                class="text-white/90 text-xl md:text-2xl font-light mb-10 italic"
+            >
+                Tu refugio de paz en la Sierra de Chiapas
+            </h2>
+        </Reveal>
+        <Reveal delay={0.5}>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <Button variant="secondary" className="px-10 py-4 text-lg">
+                    Ver Habitaciones
+                </Button>
+                <Button variant="outline" className="px-10 py-4 text-lg">
+                    Conocenos
+                </Button>
+            </div>
+        </Reveal>
+    </div>
+</section>

@@ -1,0 +1,76 @@
+---
+import { Reveal } from "../ui/Reveal";
+---
+
+<section class="py-24 px-6 max-w-7xl mx-auto bg-bone" id="esencia">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+            <Reveal>
+                <div>
+                    <span
+                        class="text-gold font-bold tracking-[0.2em] text-xs uppercase"
+                        >Nuestra Filosofía</span
+                    >
+                    <h2
+                        class="font-serif text-4xl md:text-5xl font-bold mt-4 leading-tight"
+                    >
+                        Más que un hotel, una experencia que no te puedes
+                        perder.
+                    </h2>
+                </div>
+            </Reveal>
+            <Reveal delay={0.4}>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    En el corazón de Yajalón, Hotel Santiago se erige como un
+                    santuario donde tu comodidad abraza las raíces chiapanecas.
+                    Cada detalle cuenta la historia de nuestra tierra verde.
+                </p>
+            </Reveal>
+            <Reveal delay={0.6}>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <span class="text-xl">☕</span>
+                        <span class="text-gray-700"
+                            >Nuestro propio cafe Santiago a la altura de tus
+                            expectativas</span
+                        >
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-xl">🏔️</span>
+                        <span class="text-gray-700"
+                            >Arquitectura integrada al paisaje serrano</span
+                        >
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-xl">✨</span>
+                        <span class="text-gray-700"
+                            >Hospitalidad de calidad y alma local</span
+                        >
+                    </li>
+                </ul>
+            </Reveal>
+        </div>
+        <div class="relative">
+            <Reveal delay={0.8}>
+                <div
+                    class="aspect-[4/3] rounded-lg bg-stone-800 shadow-2xl overflow-hidden"
+                >
+                    <img
+                        src="/images/recepcion.jpg"
+                        alt="Filosofía Hotel Santiago"
+                        class="w-full h-full object-cover opacity-80"
+                    />
+                </div>
+            </Reveal>
+            <div
+                class="absolute -bottom-8 -left-8 w-1/2 aspect-square rounded-lg bg-stone-700 border-[12px] border-bone shadow-2xl overflow-hidden"
+            >
+                <img
+                    src="/images/philosophy-secondary.jpg"
+                    alt="Detalle Filosofía"
+                    class="w-full h-full object-cover opacity-80 scale-135"
+                />
+            </div>
+        </div>
+    </div>
+</section>
