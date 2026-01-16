@@ -140,11 +140,6 @@ export const Contact: React.FC = () => {
                         </form>
                     </div>
                 </div>
-                <div className="w-full h-[400px] rounded-2xl overflow-hidden border-8 border-white shadow-lg bg-neutral-800 flex flex-col items-center justify-center text-white/50 gap-4">
-                    <MapPin className="w-12 h-12 text-gold animate-bounce" />
-                    <p className="font-serif italic text-xl">Ubicación del Hotel Santiago</p>
-                    <p className="text-sm uppercase tracking-widest font-sans font-bold">Yajalón, Chiapas</p>
-                </div>
             </div>
         </section>
     );

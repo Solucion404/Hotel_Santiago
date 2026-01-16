@@ -6,6 +6,7 @@ import Philosophy from "../components/sections/Philosophy.astro";
 import Rooms from "../components/sections/Rooms.astro";
 import Gallery from "../components/sections/Gallery.astro";
 import { Contact } from "../components/sections/Contact";
+import Map from "../components/ui/Map.astro";
 import Footer from "../components/layout/Footer.astro";
 ---
 
@@ -17,6 +18,13 @@ import Footer from "../components/layout/Footer.astro";
 		<Rooms />
 		<Gallery />
 		<Contact client:visible />
+		<section class="pb-24 px-6 bg-bone">
+			<div
+				class="max-w-7xl mx-auto h-[450px] rounded-3xl overflow-hidden shadow-2xl border-8 border-white"
+			>
+				<Map />
+			</div>
+		</section>
 	</main>
 	<Footer />
 </Layout>
