@@ -12,6 +12,12 @@
 }
 
 @layer base {
+
+  html,
+  body {
+    @apply overflow-x-hidden w-full relative;
+  }
+
   body {
     @apply font-sans bg-bone text-dark;
   }
