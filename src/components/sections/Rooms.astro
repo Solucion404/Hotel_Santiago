@@ -41,7 +41,7 @@ const rooms = [
 ];
 ---
 
-<section class="py-24 bg-white" id="habitaciones">
+<section class="py-24 bg-white scroll-mt-32" id="habitaciones">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
             <Reveal width="100%">
@@ -54,7 +54,12 @@ const rooms = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {
                 rooms.map((room, index) => (
-                    <Reveal key={room.title} delay={0.1 * index} width="100%">
+                    <Reveal
+                        key={room.title}
+                        delay={0.1 * index}
+                        width="100%"
+                        className="h-full"
+                    >
                         <RoomCard {...room} />
                     </Reveal>
                 ))

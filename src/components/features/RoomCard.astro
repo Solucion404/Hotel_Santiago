@@ -34,9 +34,9 @@ const featureIcons: Record<string, any> = {
 };
 ---
 
-<div class="group cursor-pointer">
+<div class="group cursor-pointer h-full flex flex-col">
     <div
-        class="rounded-xl mb-6 shadow-md h-72 bg-neutral-800 overflow-hidden relative"
+        class="rounded-xl mb-6 shadow-md h-72 bg-neutral-800 overflow-hidden relative shrink-0"
     >
         <Image
             src={image}
@@ -47,37 +47,46 @@ const featureIcons: Record<string, any> = {
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
         />
     </div>
-    <div class="flex justify-between items-end mb-4 gap-2">
-        <h3 class="font-serif text-xl font-bold leading-tight">{title}</h3>
-        <div class="text-right flex-shrink-0">
-            <span class="text-gold font-serif text-xl block leading-none"
-                >{price}</span
+
+    <div class="flex flex-col flex-grow">
+        <div class="flex justify-between items-start mb-4 gap-2">
+            <h3
+                class="font-serif text-xl font-bold leading-tight min-h-[3rem] line-clamp-2"
             >
-            <small
-                class="block text-[9px] text-gray-500 font-sans font-bold uppercase mt-1"
-            >
-                {priceDetails || "POR NOCHE"}
-            </small>
+                {title}
+            </h3>
+            <div class="text-right flex-shrink-0 pt-1">
+                <span class="text-gold font-serif text-xl block leading-none"
+                    >{price}</span
+                >
+                <small
+                    class="block text-[9px] text-gray-500 font-sans font-bold uppercase mt-1"
+                >
+                    {priceDetails || "POR NOCHE"}
+                </small>
+            </div>
         </div>
+
+        <div class="grid grid-cols-2 gap-y-3 gap-x-2 mb-6">
+            {
+                features.map((feature) => {
+                    const Icon = featureIcons[feature] || Wifi;
+                    return (
+                        <div class="flex items-center gap-2 text-gray-500 text-xs text-nowrap">
+                            <span class="text-gold/80">
+                                <Icon className="w-4 h-4" />
+                            </span>
+                            <span class="truncate">{feature}</span>
+                        </div>
+                    );
+                })
+            }
+        </div>
+
+        <button
+            class="mt-auto w-full py-3 rounded-lg text-xs font-bold bg-neutral-900 text-white hover:bg-gold transition-colors uppercase tracking-wider"
+        >
+            RESERVAR AHORA
+        </button>
     </div>
-    <div class="grid grid-cols-2 gap-y-3 gap-x-2 mb-6 min-h-[60px]">
-        {
-            features.map((feature) => {
-                const Icon = featureIcons[feature] || Wifi;
-                return (
-                    <div class="flex items-center gap-2 text-gray-500 text-xs text-nowrap">
-                        <span class="text-gold/80">
-                            <Icon className="w-4 h-4" />
-                        </span>
-                        <span class="truncate">{feature}</span>
-                    </div>
-                );
-            })
-        }
-    </div>
-    <button
-        class="w-full py-3 rounded-lg text-xs font-bold bg-neutral-900 text-white hover:bg-gold transition-colors uppercase tracking-wider"
-    >
-        RESERVAR AHORA
-    </button>
 </div>

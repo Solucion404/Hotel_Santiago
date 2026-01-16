@@ -63,8 +63,15 @@ export const Contact: React.FC = () => {
                         <div className="flex items-start gap-4">
                             <Phone className="text-gold" />
                             <div>
-                                <h4 className="font-bold">Teléfono</h4>
-                                <p className="text-gray-600">+52 (919) 123 4567</p>
+                                <h4 className="font-bold">Teléfono / WhatsApp</h4>
+                                <a
+                                    href="https://wa.me/529191478756"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-600 hover:text-gold transition-colors"
+                                >
+                                    +52 (919) 147 8756
+                                </a>
                             </div>
                         </div>
                     </div>
