@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { Instagram, Facebook } from "lucide-react";
+import logo from "../../assets/images/logo.jpg";
 ---
 
 <footer class="bg-wine text-white py-12">
@@ -11,8 +13,8 @@ import { Instagram, Facebook } from "lucide-react";
                 <div
                     class="w-12 h-12 rounded-full overflow-hidden border border-white/10 flex items-center justify-center bg-black"
                 >
-                    <img
-                        src="/images/logo.jpg"
+                    <Image
+                        src={logo}
                         alt="Logo Hotel Santiago"
                         class="w-full h-full object-cover"
                     />
@@ -23,13 +25,16 @@ import { Instagram, Facebook } from "lucide-react";
                     Hotel Santiago
                 </h3>
             </div>
-            <div class="flex gap-8 text-sm uppercase font-semibold">
+            <div class="flex gap-8 text-sm uppercase font-semibold font-sans">
                 <a
                     class="hover:text-gold transition-colors"
                     href="#habitaciones">Habitaciones</a
                 >
                 <a class="hover:text-gold transition-colors" href="#esencia"
                     >Esencia</a
+                >
+                <a class="hover:text-gold transition-colors" href="#galeria"
+                    >Galería</a
                 >
                 <a class="hover:text-gold transition-colors" href="#contacto"
                     >Contacto</a

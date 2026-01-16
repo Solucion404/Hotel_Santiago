@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import logo from "../../assets/images/logo.jpg";
 ---
 
 <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
@@ -10,8 +11,8 @@
             <div
                 class="w-12 h-12 rounded-full overflow-hidden border border-gold/20 flex items-center justify-center bg-black"
             >
-                <img
-                    src="/images/logo.jpg"
+                <Image
+                    src={logo}
                     alt="Logo Hotel Santiago"
                     class="w-full h-full object-cover"
                 />
@@ -31,7 +32,7 @@
             >
             <a
                 class="text-sm font-medium text-white/80 hover:text-gold transition-colors"
-                href="#yajalon">Yajalón</a
+                href="#galeria">Galería</a
             >
             <a
                 class="text-sm font-medium text-white/80 hover:text-gold transition-colors"

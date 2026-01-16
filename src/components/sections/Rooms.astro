@@ -1,25 +1,42 @@
 ---
-import { RoomCard } from "../features/RoomCard";
+import RoomCard from "../features/RoomCard.astro"; // Migrado a .astro para optimización
 import { Reveal } from "../ui/Reveal";
+
+// IMPORTANTE PARA EL USUARIO:
+// Mueve las imágenes de 'public/images/' a 'src/assets/images/' para que funcionen estas importaciones.
+import matrimonialImg from "../../assets/images/room-matrimonial.jpg";
+import dobleImg from "../../assets/images/room-doble.jpg";
+import kingImg from "../../assets/images/room-king.jpg";
+import suiteImg from "../../assets/images/room-suite.jpg";
 
 const rooms = [
     {
-        title: "Suite Real",
-        price: "$4,200",
-        image: "/images/room-suite-real.jpg",
-        features: ["WiFi Gratis", "Smart TV", "Clima", "Frigobar"],
+        title: "Habitación Matrimonial",
+        price: "$535.00",
+        priceDetails: "+ IMPUESTOS",
+        image: matrimonialImg,
+        features: ["Wifi", "TV", "Ducha"],
     },
     {
-        title: "Habitación Sierra",
-        price: "$2,800",
-        image: "/images/room-sierra.jpg",
-        features: ["WiFi Gratis", "Cafetera", "Clima", "Rain Shower"],
+        title: "Habitación Doble",
+        price: "$650.00",
+        priceDetails: "+ IMPUESTOS",
+        image: dobleImg,
+        features: ["Wifi", "TV", "2 Camas"],
     },
     {
-        title: "Junior Suite",
-        price: "$3,500",
-        image: "/images/room-junior-suite.jpg",
-        features: ["WiFi Gratis", "Smart TV", "Clima", "King Size"],
+        title: "Habitación King Size",
+        price: "$650.00",
+        priceDetails: "+ IMPUESTOS",
+        image: kingImg,
+        features: ["Wifi", "TV", "Cama King"],
+    },
+    {
+        title: "Suite",
+        price: "$890.00",
+        priceDetails: "+ IMPUESTOS",
+        image: suiteImg,
+        features: ["Wifi", "TV", "Frigobar", "Sala de estar"],
     },
 ];
 ---
@@ -27,17 +44,17 @@ const rooms = [
 <section class="py-24 bg-white" id="habitaciones">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <Reveal>
+            <Reveal width="100%">
                 <h2 class="font-serif text-4xl font-bold mb-4">
-                    Habitaciones & Suites
+                    Nuestras Habitaciones
                 </h2>
             </Reveal>
             <div class="w-20 h-1 bg-gold mx-auto"></div>
         </div>
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {
                 rooms.map((room, index) => (
-                    <Reveal key={room.title} delay={0.2 * index}>
+                    <Reveal key={room.title} delay={0.1 * index} width="100%">
                         <RoomCard {...room} />
                     </Reveal>
                 ))

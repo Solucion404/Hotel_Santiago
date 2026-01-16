@@ -1,5 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import { Reveal } from "../ui/Reveal";
+
+import recepcionImg from "../../assets/images/recepcion.jpg";
+import secondaryImg from "../../assets/images/philosophy-secondary.jpg";
 ---
 
 <section class="py-24 px-6 max-w-7xl mx-auto bg-bone" id="esencia">
@@ -55,20 +59,22 @@ import { Reveal } from "../ui/Reveal";
                 <div
                     class="aspect-[4/3] rounded-lg bg-stone-800 shadow-2xl overflow-hidden"
                 >
-                    <img
-                        src="/images/recepcion.jpg"
+                    <Image
+                        src={recepcionImg}
                         alt="Filosofía Hotel Santiago"
                         class="w-full h-full object-cover opacity-80"
+                        quality="high"
                     />
                 </div>
             </Reveal>
             <div
                 class="absolute -bottom-8 -left-8 w-1/2 aspect-square rounded-lg bg-stone-700 border-[12px] border-bone shadow-2xl overflow-hidden"
             >
-                <img
-                    src="/images/philosophy-secondary.jpg"
+                <Image
+                    src={secondaryImg}
                     alt="Detalle Filosofía"
                     class="w-full h-full object-cover opacity-80 scale-135"
+                    quality="high"
                 />
             </div>
         </div>

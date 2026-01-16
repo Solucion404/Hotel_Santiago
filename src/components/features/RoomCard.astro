@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import {
+    Wifi,
+    Tv,
+    Wind,
+    Wine,
+    Coffee,
+    Bath,
+    BedDouble,
+    Layout,
+} from "lucide-react";
+
+interface Props {
+    title: string;
+    price: string;
+    image: any; // ImageMetadata object
+    features: string[];
+    priceDetails?: string;
+}
+
+const { title, price, image, features, priceDetails } = Astro.props;
+
+const featureIcons: Record<string, any> = {
+    Wifi: Wifi,
+    TV: Tv,
+    Ducha: Bath,
+    "2 Camas": BedDouble,
+    "Cama King": BedDouble,
+    Frigobar: Wine,
+    "Sala de estar": Layout,
+    Clima: Wind,
+    Cafetera: Coffee,
+};
+---
+
+<div class="group cursor-pointer">
+    <div
+        class="rounded-xl mb-6 shadow-md h-72 bg-neutral-800 overflow-hidden relative"
+    >
+        <Image
+            src={image}
+            alt={title}
+            width={800}
+            densities={[1.5, 2]}
+            quality="high"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
+        />
+    </div>
+    <div class="flex justify-between items-end mb-4 gap-2">
+        <h3 class="font-serif text-xl font-bold leading-tight">{title}</h3>
+        <div class="text-right flex-shrink-0">
+            <span class="text-gold font-serif text-xl block leading-none"
+                >{price}</span
+            >
+            <small
+                class="block text-[9px] text-gray-500 font-sans font-bold uppercase mt-1"
+            >
+                {priceDetails || "POR NOCHE"}
+            </small>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-y-3 gap-x-2 mb-6 min-h-[60px]">
+        {
+            features.map((feature) => {
+                const Icon = featureIcons[feature] || Wifi;
+                return (
+                    <div class="flex items-center gap-2 text-gray-500 text-xs text-nowrap">
+                        <span class="text-gold/80">
+                            <Icon className="w-4 h-4" />
+                        </span>
+                        <span class="truncate">{feature}</span>
+                    </div>
+                );
+            })
+        }
+    </div>
+    <button
+        class="w-full py-3 rounded-lg text-xs font-bold bg-neutral-900 text-white hover:bg-gold transition-colors uppercase tracking-wider"
+    >
+        RESERVAR AHORA
+    </button>
+</div>

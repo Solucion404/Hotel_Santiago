@@ -1,50 +1,64 @@
 ---
+import { Image } from "astro:assets";
 import { Reveal } from "../ui/Reveal";
+
+import gallery1 from "../../assets/images/gallery-1.jpg";
+import gallery2 from "../../assets/images/gallery-2.jpg";
+import gallery3 from "../../assets/images/gallery-3.jpg";
+import gallery4 from "../../assets/images/gallery-4.jpg";
 ---
 
-<section class="py-24 bg-dark text-white" id="yajalon">
+<section class="py-24 bg-dark text-white" id="galeria">
     <div class="max-w-7xl mx-auto px-6">
-        <Reveal>
-            <h2 class="font-serif text-4xl font-bold mb-12 text-center">
-                Descubre Yajalón
-            </h2>
-        </Reveal>
+        <div class="text-center mb-16">
+            <Reveal width="100%">
+                <h2 class="font-serif text-4xl font-bold mb-4">
+                    Rincones con Encanto
+                </h2>
+            </Reveal>
+            <Reveal width="100%" delay={0.2}>
+                <p class="text-white/60 text-lg italic">
+                    Un recorrido visual por la tranquilidad de nuestra
+                    arquitectura.
+                </p>
+            </Reveal>
+        </div>
         <div
             class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-[800px] md:h-[600px]"
         >
             <div
                 class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl bg-neutral-800"
             >
-                <img
-                    src="/images/yajalon-1.jpg"
-                    alt="Yajalón Vista 1"
+                <Image
+                    src={gallery1}
+                    alt="Detalle arquitectónico del Hotel Santiago"
                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                 />
             </div>
             <div
                 class="md:col-span-1 md:row-span-2 relative overflow-hidden rounded-2xl bg-neutral-800"
             >
-                <img
-                    src="/images/yajalon-2.jpg"
-                    alt="Yajalón Vista 2"
+                <Image
+                    src={gallery2}
+                    alt="Jardines interiores y vegetación"
                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                 />
             </div>
             <div
                 class="md:col-span-1 md:row-span-1 relative overflow-hidden rounded-2xl bg-neutral-800"
             >
-                <img
-                    src="/images/yajalon-3.jpg"
-                    alt="Yajalón Vista 3"
+                <Image
+                    src={gallery3}
+                    alt="Vista de la terraza al atardecer"
                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                 />
             </div>
             <div
                 class="md:col-span-1 md:row-span-1 relative overflow-hidden rounded-2xl bg-neutral-800"
             >
-                <img
-                    src="/images/yajalon-4.jpg"
-                    alt="Yajalón Vista 4"
+                <Image
+                    src={gallery4}
+                    alt="Pasillos y acabados en piedra"
                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                 />
             </div>
