@@ -23,7 +23,7 @@
   }
 
   body {
-    @apply font-sans bg-bone text-dark;
+    @apply font-sans bg-dark text-white;
   }
 }
 
