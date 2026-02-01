@@ -9,6 +9,12 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ logo }) => {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
+    const [entryDone, setEntryDone] = useState(false);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => setEntryDone(true), 2000);
+        return () => clearTimeout(timer);
+    }, []);
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious() ?? 0;
@@ -21,12 +27,17 @@ export const Header: React.FC<HeaderProps> = ({ logo }) => {
 
     return (
         <motion.div
-            variants={{
-                visible: { y: 0 },
-                hidden: { y: "-150%" },
-            }}
+            initial={{ y: -100, opacity: 0 }}
             animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
+            variants={{
+                visible: { y: 0, opacity: 1 },
+                hidden: { y: "-150%", opacity: 0 },
+            }}
+            transition={{
+                duration: entryDone ? 0.35 : 0.8,
+                ease: entryDone ? "easeInOut" : [0.16, 1, 0.3, 1],
+                delay: entryDone ? 0 : 0.8
+            }}
             className="fixed top-0 left-0 right-0 z-50 flex justify-center px-6 pt-[max(1.5rem,env(safe-area-inset-top))]"
         >
             <nav className="flex items-center justify-between w-full max-w-5xl bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 shadow-2xl">
