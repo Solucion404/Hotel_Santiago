@@ -1,99 +1,57 @@
 ---
-import { Image } from "astro:assets";
-import { Reveal } from "../ui/Reveal";
+import { PhilosophyContent } from "./PhilosophyContent";
 
 import recepcionImg from "../../assets/images/recepcion.jpg";
 import secondaryImg from "../../assets/images/philosophy-secondary.jpg";
+
+const content = {
+    title: "Nuestra Filosofía",
+    subtitle: "Más que un hotel, una herencia viva.",
+    description:
+        "En el corazón de Yajalón, Hotel Santiago se erige como un santuario donde tu comodidad abraza las raíces chiapanecas. Cada detalle cuenta la historia de nuestra tierra verde, honrando la tradición con un toque de lujo contemporáneo.",
+    items: [
+        {
+            icon: "☕",
+            label: "Café Local",
+            text: "Nuestro propio café Santiago a la altura de tus expectativas.",
+        },
+        {
+            icon: "🏙️",
+            label: "Arquitectura",
+            text: "Moderna y urbana conviviendo con la esencia local.",
+        },
+        {
+            icon: "✨",
+            label: "Hospitalidad",
+            text: "Servicio de calidad con alma y calidez chiapaneca.",
+        },
+        {
+            icon: "🌿",
+            label: "Naturaleza",
+            text: "Rodeado de la selva verde y el aire puro de Yajalón.",
+        },
+    ],
+};
+
+const images = {
+    main: recepcionImg.src,
+    secondary: secondaryImg.src,
+};
 ---
 
-<section class="py-24 px-6 bg-bone overflow-hidden scroll-mt-32" id="esencia">
+<section
+    class="py-24 lg:py-32 px-6 bg-bone overflow-hidden scroll-mt-32"
+    id="esencia"
+>
     <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <!-- Texto -->
-            <div class="space-y-8 order-1 lg:order-1">
-                <Reveal width="100%">
-                    <span
-                        class="text-gold font-bold tracking-[0.2em] text-sm uppercase"
-                        >Nuestra Filosofía</span
-                    >
-                </Reveal>
-                <Reveal width="100%" delay={0.2}>
-                    <h2
-                        class="font-serif text-4xl md:text-5xl font-bold leading-tight"
-                    >
-                        Más que un hotel, una herencia viva.
-                    </h2>
-                </Reveal>
-                <Reveal width="100%" delay={0.3}>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        En el corazón de Yajalón, Hotel Santiago se erige como
-                        un santuario donde tu comodidad abraza las raíces
-                        chiapanecas. Cada detalle cuenta la historia de nuestra
-                        tierra verde.
-                    </p>
-                </Reveal>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-                    <Reveal width="100%" delay={0.4}>
-                        <div class="flex items-start gap-4">
-                            <span class="text-2xl mt-1">☕</span>
-                            <div>
-                                <h4 class="font-bold">Café Local</h4>
-                                <p class="text-sm text-gray-500">
-                                    Nuestro propio café Santiago a la altura de
-                                    tus expectativas
-                                </p>
-                            </div>
-                        </div>
-                    </Reveal>
-                    <Reveal width="100%" delay={0.5}>
-                        <div class="flex items-start gap-4">
-                            <span class="text-2xl mt-1">🏙️</span>
-                            <div>
-                                <h4 class="font-bold">Arquitectura</h4>
-                                <p class="text-sm text-gray-500">
-                                    Moderna y urbana
-                                </p>
-                            </div>
-                        </div>
-                    </Reveal>
-                    <Reveal width="100%" delay={0.6}>
-                        <div class="flex items-start gap-4">
-                            <span class="text-2xl mt-1">✨</span>
-                            <div>
-                                <h4 class="font-bold">Hospitalidad</h4>
-                                <p class="text-sm text-gray-500">
-                                    De calidad y alma local
-                                </p>
-                            </div>
-                        </div>
-                    </Reveal>
-                </div>
-            </div>
-
-            <!-- Imágenes -->
-            <div
-                class="relative flex flex-col md:block order-2 lg:order-2 gap-4"
-            >
-                <div
-                    class="w-full md:w-4/5 md:aspect-[4/5] aspect-video rounded-3xl overflow-hidden shadow-2xl relative z-10 bg-[#E5E0D8]"
-                >
-                    <Image
-                        src={recepcionImg}
-                        alt="Recepción Hotel Santiago"
-                        class="w-full h-full object-cover"
-                    />
-                </div>
-                <div
-                    class="w-full md:w-1/2 md:aspect-square aspect-video rounded-3xl overflow-hidden shadow-2xl md:absolute -bottom-10 -right-6 z-20 border-8 border-bone bg-[#E5E0D8]"
-                >
-                    <Image
-                        src={secondaryImg}
-                        alt="Detalles de la arquitectura"
-                        class="w-full h-full object-cover scale-110"
-                    />
-                </div>
-            </div>
-        </div>
+        <PhilosophyContent
+            client:visible
+            title={content.title}
+            subtitle={content.subtitle}
+            description={content.description}
+            mainImage={images.main}
+            secondaryImage={images.secondary}
+            items={content.items}
+        />
     </div>
 </section>
