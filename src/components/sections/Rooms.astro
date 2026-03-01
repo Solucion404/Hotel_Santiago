@@ -1,17 +1,10 @@
 ---
 import RoomCard from "../features/RoomCard.astro"; // Migrado a .astro para optimización
 import { Reveal } from "../ui/Reveal";
-import { getImage } from "astro:assets";
-
-// IMPORTANTE PARA EL USUARIO:
-// Mueve las imágenes de 'public/images/' a 'src/assets/images/' para que funcionen estas importaciones.
 import matrimonialImg from "../../assets/images/room-matrimonial.jpg";
 import dobleImg from "../../assets/images/room-doble.jpg";
 import kingImg from "../../assets/images/room-king.jpg";
 import suiteImg from "../../assets/images/room-suite.jpg";
-import philosophyBg from "../../assets/images/philosophy-bg.jpg";
-
-const optimizedBg = await getImage({ src: philosophyBg, format: "webp" });
 
 const rooms = [
     {
@@ -45,11 +38,7 @@ const rooms = [
 ];
 ---
 
-<section
-    class="py-24 relative bg-cover bg-center bg-no-repeat md:bg-fixed scroll-mt-32"
-    id="habitaciones"
-    style={`background-image: url('${optimizedBg.src}');`}
->
+<section class="py-24 relative scroll-mt-32" id="habitaciones">
     <!-- Sin overlay oscuro para resaltar la textura -->
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
