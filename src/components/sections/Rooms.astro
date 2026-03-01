@@ -1,6 +1,7 @@
 ---
 import RoomCard from "../features/RoomCard.astro"; // Migrado a .astro para optimización
 import { Reveal } from "../ui/Reveal";
+import { getImage } from "astro:assets";
 
 // IMPORTANTE PARA EL USUARIO:
 // Mueve las imágenes de 'public/images/' a 'src/assets/images/' para que funcionen estas importaciones.
@@ -8,6 +9,9 @@ import matrimonialImg from "../../assets/images/room-matrimonial.jpg";
 import dobleImg from "../../assets/images/room-doble.jpg";
 import kingImg from "../../assets/images/room-king.jpg";
 import suiteImg from "../../assets/images/room-suite.jpg";
+import philosophyBg from "../../assets/images/philosophy-bg.jpg";
+
+const optimizedBg = await getImage({ src: philosophyBg, format: "webp" });
 
 const rooms = [
     {
@@ -41,11 +45,19 @@ const rooms = [
 ];
 ---
 
-<section class="py-24 bg-white scroll-mt-32" id="habitaciones">
-    <div class="max-w-7xl mx-auto px-6">
+<section
+    class="py-24 relative bg-cover bg-center bg-no-repeat bg-fixed scroll-mt-32"
+    id="habitaciones"
+    style={`background-image: url('${optimizedBg.src}');`}
+>
+    <!-- Sin overlay oscuro para resaltar la textura -->
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center mb-16">
             <Reveal width="100%">
-                <h2 class="font-serif text-4xl font-bold mb-4">
+                <h2
+                    class="font-serif text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] text-4xl font-bold mb-4"
+                >
                     Nuestras Habitaciones
                 </h2>
             </Reveal>
@@ -69,9 +81,12 @@ const rooms = [
         {/* Nota de transparencia de precios */}
         <Reveal delay={0.6} width="100%">
             <div
-                class="mt-12 flex items-center justify-center gap-2 text-neutral-500 text-sm italic border-t border-neutral-100 pt-8"
+                class="mt-12 flex items-center justify-center gap-2 text-[#F5F5F5] font-medium drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] text-sm italic border-t border-neutral-100/20 pt-8"
             >
-                <span class="text-gold font-bold">*</span>
+                <span
+                    class="text-gold font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
+                    >*</span
+                >
                 <p>Persona extra: $130.00 MXN por noche.</p>
             </div>
         </Reveal>
