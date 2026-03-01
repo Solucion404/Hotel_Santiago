@@ -16,14 +16,14 @@ import heroBg from "../../assets/images/hero-bg.jpg";
         <Image
             src={heroBg}
             alt="Fondo Hotel Santiago"
-            class="w-full h-full object-cover opacity-60"
+            class="w-full h-full object-cover"
             quality="high"
             densities={[1.5, 2]}
             loading="eager"
         />
     </HeroBackground>
 
-    <div class="absolute inset-0 bg-black/50 z-10"></div>
+    <div class="absolute inset-0 bg-black/10 z-10"></div>
 
     <HeroContent client:load />
 </section>

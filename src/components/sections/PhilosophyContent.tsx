@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 interface PhilosophyContentProps {
     title: string;
@@ -14,7 +14,7 @@ interface PhilosophyContentProps {
     }>;
 }
 
-const containerVariants = {
+const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -25,7 +25,7 @@ const containerVariants = {
     }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
     visible: {
         opacity: 1,
@@ -35,7 +35,7 @@ const itemVariants = {
     }
 };
 
-const imageLeftVariants = {
+const imageLeftVariants: Variants = {
     hidden: { opacity: 0, x: -50, scale: 0.95 },
     visible: {
         opacity: 1,
@@ -45,7 +45,7 @@ const imageLeftVariants = {
     }
 };
 
-const imageRightVariants = {
+const imageRightVariants: Variants = {
     hidden: { opacity: 0, x: 50, scale: 0.95 },
     visible: {
         opacity: 1,
@@ -152,7 +152,7 @@ export const PhilosophyContent: React.FC<PhilosophyContentProps> = ({
                     <img
                         src={secondaryImage}
                         alt="Detalles Santiago"
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        className="w-full h-full object-cover transition-all duration-700"
                     />
                 </motion.div>
 
