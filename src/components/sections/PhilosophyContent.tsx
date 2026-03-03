@@ -106,20 +106,26 @@ export const PhilosophyContent: React.FC<PhilosophyContentProps> = ({
                     {description}
                 </motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8 pt-6">
                     {items.map((item, idx) => (
                         <motion.div
                             key={idx}
                             variants={itemVariants}
-                            className="space-y-3 group"
+                            className="group relative flex flex-col p-6 rounded-[1.5rem] bg-black/40 backdrop-blur-md border border-white/10 hover:border-gold/50 transition-all duration-500 overflow-hidden shadow-xl"
                         >
-                            <div className="w-12 h-12 rounded-full bg-gold/5 flex items-center justify-center text-2xl transform transition-transform group-hover:scale-110 duration-500">
-                                {item.icon}
+                            {/* Hover Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                            {/* Icon Container */}
+                            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl mb-5 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-gold/20 group-hover:border-gold/30 transition-all duration-500 shadow-inner">
+                                <span className="drop-shadow-md">{item.icon}</span>
                             </div>
-                            <h4 className="font-bold text-white group-hover:text-gold transition-colors duration-300 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+
+                            {/* Text Content */}
+                            <h4 className="font-bold text-xl text-white mb-2 group-hover:text-gold transition-colors duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
                                 {item.label}
                             </h4>
-                            <p className="text-sm text-[#F5F5F5] font-medium leading-relaxed drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] line-clamp-2">
+                            <p className="text-sm md:text-base text-[#F5F5F5] font-medium leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,1)] line-clamp-3">
                                 {item.text}
                             </p>
                         </motion.div>
