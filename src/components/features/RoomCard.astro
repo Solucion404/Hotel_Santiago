@@ -59,8 +59,7 @@ const featureIcons: Record<string, any> = {
                 {title}
             </h3>
             <div class="text-right flex-shrink-0 pt-1">
-                <span
-                    class="text-gold font-serif text-xl block leading-none"
+                <span class="text-gold font-serif text-xl block leading-none"
                     >{price}</span
                 >
                 <small
@@ -87,10 +86,13 @@ const featureIcons: Record<string, any> = {
             }
         </div>
 
-        <button
-            class="mt-auto w-full py-3 rounded-lg text-xs font-bold bg-neutral-900 text-white hover:bg-gold transition-colors uppercase tracking-wider"
+        <a
+            href={`https://wa.me/529191478756?text=Hola,%20¿tienen%20disponibles%20habitaciones%20${encodeURIComponent(title)}?`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-auto w-full py-3 rounded-lg text-xs font-bold bg-[#923b3b] text-white hover:bg-[#7a2f2f] transition-colors uppercase tracking-wider text-center"
         >
-            RESERVAR AHORA
-        </button>
+            Consultar disponibilidad
+        </a>
     </div>
 </div>
