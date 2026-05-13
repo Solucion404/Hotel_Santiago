@@ -2,6 +2,10 @@
 import { PhilosophyContent } from "./PhilosophyContent";
 import recepcionImg from "../../assets/images/recepcion.jpg";
 import secondaryImg from "../../assets/images/philosophy-secondary.jpg";
+import philosophyBg from "../../assets/images/philosophy-bg.jpg";
+import { getImage } from "astro:assets";
+
+const optimizedBg = await getImage({ src: philosophyBg, format: "webp" });
 
 const content = {
     title: "Nuestra Filosofía",
@@ -42,7 +46,13 @@ const images = {
     class="py-24 lg:py-32 px-6 relative overflow-hidden scroll-mt-32 shadow-[inset_0_30px_30px_-15px_rgba(0,0,0,0.8)]"
     id="esencia"
 >
-    <!-- Sin overlay extra -->
+    <!-- Fondo Parallax Local -->
+    <div
+        class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat bg-fixed pointer-events-none"
+        style={`background-image: url('${optimizedBg.src}');`}
+    >
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
         <PhilosophyContent

@@ -54,17 +54,17 @@ const featureIcons: Record<string, any> = {
     <div class="flex flex-col flex-grow">
         <div class="flex justify-between items-start mb-4 gap-2">
             <h3
-                class="font-serif text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] text-xl font-bold leading-tight min-h-[3rem] line-clamp-2"
+                class="font-serif text-neutral-900 text-xl font-bold leading-tight min-h-[3rem] line-clamp-2"
             >
                 {title}
             </h3>
             <div class="text-right flex-shrink-0 pt-1">
                 <span
-                    class="text-gold font-serif text-xl block leading-none drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
+                    class="text-gold font-serif text-xl block leading-none"
                     >{price}</span
                 >
                 <small
-                    class="block text-[9px] text-[#F5F5F5] font-bold uppercase mt-1 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
+                    class="block text-[9px] text-gray-500 font-bold uppercase mt-1"
                 >
                     {priceDetails || "POR NOCHE"}
                 </small>
@@ -76,8 +76,8 @@ const featureIcons: Record<string, any> = {
                 features.map((feature) => {
                     const Icon = featureIcons[feature] || Wifi;
                     return (
-                        <div class="flex items-center gap-2 text-[#F5F5F5] font-medium drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] text-xs text-nowrap">
-                            <span class="text-gold drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+                        <div class="flex items-center gap-2 text-gray-600 font-medium text-xs text-nowrap">
+                            <span class="text-gold">
                                 <Icon className="w-4 h-4" />
                             </span>
                             <span class="truncate">{feature}</span>

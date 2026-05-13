@@ -38,14 +38,14 @@ const rooms = [
 ];
 ---
 
-<section class="py-24 relative scroll-mt-32" id="habitaciones">
-    <!-- Sin overlay oscuro para resaltar la textura -->
+<section class="py-24 relative scroll-mt-32 bg-white" id="habitaciones">
+    <!-- Fondo estático blanco para separar secciones -->
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center mb-16">
             <Reveal width="100%">
                 <h2
-                    class="font-serif text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] text-4xl font-bold mb-4"
+                    class="font-serif text-neutral-900 text-4xl font-bold mb-4"
                 >
                     Nuestras Habitaciones
                 </h2>
@@ -70,10 +70,10 @@ const rooms = [
         {/* Nota de transparencia de precios */}
         <Reveal delay={0.6} width="100%">
             <div
-                class="mt-12 flex items-center justify-center gap-2 text-[#F5F5F5] font-medium drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] text-sm italic border-t border-neutral-100/20 pt-8"
+                class="mt-12 flex items-center justify-center gap-2 text-gray-600 font-medium text-sm italic border-t border-neutral-100 pt-8"
             >
                 <span
-                    class="text-gold font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
+                    class="text-gold font-bold"
                     >*</span
                 >
                 <p>Persona extra: $130.00 MXN por noche.</p>

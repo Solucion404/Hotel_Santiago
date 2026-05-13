@@ -8,20 +8,10 @@ import Gallery from "../components/sections/Gallery.astro";
 import { Contact } from "../components/sections/Contact";
 import Map from "../components/ui/Map.astro";
 import Footer from "../components/layout/Footer.astro";
-import { getImage } from "astro:assets";
-import philosophyBg from "../assets/images/philosophy-bg.jpg";
-
-const optimizedBg = await getImage({ src: philosophyBg, format: "webp" });
 ---
 
 <Layout title="Inicio">
 	<Header />
-	<!-- Cimiento de Parallax Global Bulletproof -->
-	<div
-		class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat pointer-events-none"
-		style={`background-image: url('${optimizedBg.src}');`}
-	>
-	</div>
 
 	<main class="relative z-0">
 		<Hero />
